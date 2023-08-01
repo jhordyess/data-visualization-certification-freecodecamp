@@ -15,3 +15,13 @@ done
 
 # Initialize the project with yarn
 yarn init -y
+
+# Install prettier and prettier plugin for tailwindcss
+yarn add -D prettier prettier-plugin-tailwindcss
+
+# Install and init eslint
+yarn add -D eslint && yarn eslint --init
+
+# Install husky & enable git hooks
+yarn add -D husky && yarn husky install
+yarn husky add .husky/pre-commit "yarn lint"
