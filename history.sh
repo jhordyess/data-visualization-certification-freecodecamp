@@ -12,3 +12,6 @@ for project in "${projects[@]}"; do
     touch docs/"$project"/style.css
     touch docs/"$project"/script.js
 done
+
+# Initialize the project with yarn
+yarn init -y

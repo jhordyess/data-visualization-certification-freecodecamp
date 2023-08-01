@@ -1,0 +1,23 @@
+{
+  "name": "data-visualization-certification",
+  "description": "Data Visualization Certification Projects",
+  "version": "1.0.0",
+  "private": true,
+  "author": "jhordyess <dev@jhordyess.com>",
+  "license": "MIT",
+  "keywords": [
+    "data visualization",
+    "D3.js",
+    "JSON",
+    "charts",
+    "graphs",
+    "maps",
+    "certification",
+    "FreeCodeCamp",
+    "web development"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jhordyess/data-visualization-certification.git"
+  }
+}
