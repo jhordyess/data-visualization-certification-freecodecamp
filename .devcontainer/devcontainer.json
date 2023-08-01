@@ -1,0 +1,19 @@
+{
+  "name": "data-visualization-certification",
+  "image": "jhordyess/node",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "dsznajder.es7-react-js-snippets",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  "postCreateCommand": "sudo npm i npm@latest -g",
+  "remoteUser": "node"
+}
