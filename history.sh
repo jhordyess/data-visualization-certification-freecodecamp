@@ -25,3 +25,7 @@ yarn add -D eslint && yarn eslint --init
 # Install husky & enable git hooks
 yarn add -D husky && yarn husky install
 yarn husky add .husky/pre-commit "yarn lint"
+
+# Install tailwindcss
+yarn add -D tailwindcss && yarn tailwindcss init
+yarn husky add .husky/pre-commit "yarn tailwindcss:build"

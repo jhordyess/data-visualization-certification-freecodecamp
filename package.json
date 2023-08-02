@@ -22,12 +22,14 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "tailwindcss:build": "tailwindcss -i src/index.css -o docs/styles.css",
     "lint": "eslint . --ext .js"
   },
   "devDependencies": {
     "eslint": "^8.46.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.4.1"
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "tailwindcss": "^3.3.3"
   }
 }
