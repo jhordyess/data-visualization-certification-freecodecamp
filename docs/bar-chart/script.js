@@ -41,14 +41,14 @@ const showTooltip = (event, data) => {
   if (tooltipTotalWidth > screenWidth) translateX = event.clientX - tooltipWidth - chartPadding.left
 
   tooltip
-    .style('opacity', 1)
+    .style('display', 'block')
     .style('transform', `translate(${translateX}px,${translateY}px)`)
     .attr('data-date', data[0])
     .html(`${date}<br>${value} Billion`)
 }
 
 const hideTooltip = () => {
-  d3.select('#tooltip').style('opacity', 0)
+  d3.select('#tooltip').style('display', 'none')
 }
 
 const svg = d3
