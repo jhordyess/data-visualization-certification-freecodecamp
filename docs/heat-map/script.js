@@ -16,7 +16,7 @@ const legendWidth = 396
 const legendHeight = 20
 const legendPadding = 30
 
-const colorPallete = [
+const colorPalette = [
   '#313695',
   '#4575b4',
   '#74add1',
@@ -54,7 +54,34 @@ const svg = d3
 
 const xScale = d3.scaleBand().range([chartPadding.left, chartWidth - chartPadding.right])
 const yScale = d3.scaleBand().range([chartHeight - chartPadding.bottom, chartPadding.top])
-const colorScale = d3.scaleThreshold().range(colorPallete)
+const colorScale = d3.scaleThreshold().range(colorPalette)
+
+const showTooltip = ({ clientX, clientY }, { year, month, variance }, baseTemperature) => {
+  const date = formatDate(year, month - 1)
+  const temperature = formatTemperature(baseTemperature + variance)
+  const variation = formatTemperature(variance)
+
+  const screenWidth =
+    window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+
+  let translateX = clientX + 15
+  const translateY = clientY - yScale.bandwidth() + window.scrollY
+
+  const tooltipWidth = 144
+  const tooltipTotalWidth = translateX + tooltipWidth + chartPadding.right
+
+  if (tooltipTotalWidth > screenWidth) translateX = clientX - tooltipWidth - 15
+
+  d3.select('#tooltip')
+    .style('display', 'block')
+    .attr('data-year', year)
+    .html(`${date}<br/>${temperature}<br/>${variation}`)
+    .style('transform', `translate(${translateX}px,${translateY}px)`)
+}
+
+const hideTooltip = () => {
+  d3.select('#tooltip').style('display', 'none')
+}
 
 const drawHeatMap = (data, baseTemperature) => {
   svg
@@ -71,31 +98,8 @@ const drawHeatMap = (data, baseTemperature) => {
     .attr('height', yScale.bandwidth())
     .attr('class', 'hover:stroke-black cursor-pointer cell')
     .attr('fill', ({ variance }) => colorScale(baseTemperature + variance))
-    .on('mouseover', async ({ clientX, clientY }, { year, month, variance }) => {
-      const date = formatDate(year, month - 1)
-      const temperature = formatTemperature(baseTemperature + variance)
-      const variation = formatTemperature(variance)
-
-      const screenWidth =
-        window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-
-      let translateX = clientX + 15
-      const translateY = clientY - yScale.bandwidth() + window.scrollY
-
-      const tooltipWidth = 144
-      const tooltipTotalWidth = translateX + tooltipWidth + chartPadding.right
-
-      if (tooltipTotalWidth > screenWidth) translateX = clientX - tooltipWidth - 15
-
-      d3.select('#tooltip')
-        .style('display', 'block')
-        .attr('data-year', year)
-        .html(`${date}<br/>${temperature}<br/>${variation}`)
-        .style('transform', `translate(${translateX}px,${translateY}px)`)
-    })
-    .on('mouseout', () => {
-      d3.select('#tooltip').style('display', 'none')
-    })
+    .on('mouseover', (event, data) => showTooltip(event, data, baseTemperature))
+    .on('mouseout', hideTooltip)
 }
 
 const drawLegend = () => {
@@ -115,8 +119,7 @@ const drawLegend = () => {
     .attr('transform', `translate(0,${chartHeight + legendHeight})`)
     .call(legendAxis)
 
-  const data = colorPallete.map(color => colorScale.invertExtent(color))
-  console.log('data', data)
+  const data = colorPalette.map(color => colorScale.invertExtent(color))
 
   svg
     .append('g')
@@ -157,10 +160,10 @@ const drawAxes = () => {
 const createColorDomain = (data, baseTemperature) => {
   const variances = data.map(({ variance }) => baseTemperature + variance)
   const [minVariance, maxVariance] = [d3.min(variances), d3.max(variances)]
-  const step = (maxVariance - minVariance) / colorPallete.length
+  const step = (maxVariance - minVariance) / colorPalette.length
   const arr = []
   //🤔
-  for (let i = 1; i < colorPallete.length; i++) {
+  for (let i = 1; i < colorPalette.length; i++) {
     arr.push(minVariance + i * step)
   }
   return arr
