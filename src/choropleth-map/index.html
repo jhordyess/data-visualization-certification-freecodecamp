@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visualize Data with a Scatterplot Graph</title>
-    <link href="./../styles.css" rel="stylesheet" />
+    <title>Visualize Data with a Choropleth Map</title>
+    <link href="/style.css" rel="stylesheet" />
   </head>
   <body class="relative min-h-screen">
     <header class="bg-blue-600 py-2 text-center text-white">
@@ -12,9 +12,11 @@
     </header>
     <main class="container mx-auto mt-8">
       <h2 id="title" class="mb-4 text-center text-2xl font-bold">
-        Doping in Professional Bicycle Racing 🚴
+        United States Educational Attainment
       </h2>
-      <h3 id="description" class="mb-8 text-center text-lg">35 Fastest times up Alpe d'Huez 🇫🇷</h3>
+      <h3 id="description" class="mb-8 text-center text-lg">
+        Percentage of adults age 25 and older with a bachelor's degree or higher (2010-2014)
+      </h3>
       <div class="m-8 flex justify-center">
         <div
           id="spinner"
@@ -28,8 +30,10 @@
     </main>
     <div
       id="tooltip"
-      class="absolute left-0 top-0 hidden rounded bg-orange-200 px-3 py-2 text-left text-xs shadow-2xl"
+      class="absolute left-0 top-0 hidden w-36 rounded bg-orange-200 py-2 text-center text-xs shadow-2xl"
     ></div>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
     <script type="module" src="./script.js"></script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
