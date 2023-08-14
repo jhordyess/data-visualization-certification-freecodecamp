@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://res.cloudinary.com/jhordyess/image/upload/v1667836186/global/favicon.svg.svg"
+    />
+    <title>Visualize Data with a Choropleth Map</title>
+    
+    <script type="module" crossorigin src="/data-visualization-certification/assets/choropleth-map-95c42325.js"></script>
+    <link rel="modulepreload" crossorigin href="/data-visualization-certification/assets/style-3f9d7e1e.js">
+    <link rel="stylesheet" href="/data-visualization-certification/assets/style-c9178152.css">
+  </head>
+  <body class="relative min-h-screen">
+    <header class="bg-blue-600 py-2 text-center text-white">
+      <h1 class="text-2xl font-bold">Data Visualization Certification</h1>
+    </header>
+
+    <main class="container mx-auto mt-8">
+      <h2 id="title" class="mb-4 text-center text-2xl font-bold">
+        United States Educational Attainment
+      </h2>
+      <h3 id="description" class="mb-8 text-center text-lg">
+        Percentage of adults age 25 and older with a bachelor's degree or higher (2010-2014)
+      </h3>
+      <div class="m-8 flex justify-center">
+        <div
+          id="spinner"
+          class="h-10 w-10 animate-spin rounded-full border-4 border-t-orange-200"
+        ></div>
+        <div
+          id="chart-container"
+          class="hidden overflow-x-auto border bg-gray-100 p-2 shadow-lg"
+        ></div>
+      </div>
+    </main>
+
+    <hr class="my-8" />
+    <footer class="mx-auto mb-4 text-center">
+      Made with 💪 by&nbsp;
+      <a
+        class="text-blue-600 hover:text-blue-400"
+        href="https://www.jhordyess.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Jhordyess
+      </a>
+      <br />
+      <a
+        href="https://github.com/jhordyess/data-visualization-certification"
+        target="_blank"
+        rel="noreferrer"
+        class="text-blue-600 hover:text-blue-400"
+      >
+        👉 View on GitHub
+      </a>
+    </footer>
+
+    <div
+      id="tooltip"
+      class="absolute left-0 top-0 hidden w-36 rounded bg-orange-200 py-2 text-center text-xs shadow-2xl"
+    ></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
