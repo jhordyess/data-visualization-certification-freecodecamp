@@ -16,10 +16,6 @@
     "freeCodeCamp",
     "web development"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:jhordyess/data-visualization-certification.git"
-  },
   "type": "module",
   "scripts": {
     "dev": "vite",
