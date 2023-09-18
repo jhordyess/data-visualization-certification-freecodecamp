@@ -1,6 +1,6 @@
 {
   "name": "data-visualization-certification",
-  "image": "jhordyess/node",
+  "image": "jhordyess/node:18",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -13,6 +13,5 @@
       }
     }
   },
-  "postCreateCommand": "sudo npm i npm@latest -g && yarn",
-  "remoteUser": "node"
+  "postCreateCommand": "sudo npm i npm@latest -g && yarn"
 }
