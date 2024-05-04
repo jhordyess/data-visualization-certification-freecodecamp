@@ -21,7 +21,7 @@ async function getEmojiFlag(alpha3Code) {
     ).then(response => response.json())
     const codePoints = countryCode.split('').map(char => 127397 + char.charCodeAt())
     return String.fromCodePoint(...codePoints)
-  } catch (error) {
+  } catch {
     return alpha3Code
   }
 }

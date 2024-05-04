@@ -1,4 +1,4 @@
-/* eslint-env node */
+/* global __dirname -- Global defined by Node.js */
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
