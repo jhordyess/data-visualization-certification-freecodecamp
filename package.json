@@ -23,8 +23,7 @@
     "preview": "vite preview",
     "postinstall": "husky",
     "lint": "eslint",
-    "predeploy": "yarn lint && yarn build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "yarn lint && yarn build && gh-pages -d dist"
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",
