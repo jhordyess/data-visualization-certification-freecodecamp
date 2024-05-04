@@ -5,7 +5,7 @@ export default [
   {
     languageOptions: { globals: globals.browser },
     files: ['**/*.js'],
-    ignores: ['node_modules/', 'dist/']
+    ignores: ['dist/'] // FIXME This do not prevent the linter from checking the dist folder!
   },
   pluginJs.configs.recommended
 ]
