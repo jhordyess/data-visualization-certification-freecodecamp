@@ -1,5 +1,5 @@
 {
-  "name": "data-visualization-certification",
+  "name": "data-visualization-certification-freecodecamp",
   "image": "jhordyess/node:18",
   "customizations": {
     "vscode": {

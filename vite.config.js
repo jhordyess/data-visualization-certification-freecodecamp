@@ -5,7 +5,7 @@ import { resolve } from 'path'
 const root = 'src'
 
 export default defineConfig({
-  base: '/data-visualization-certification/',
+  base: '/data-visualization-certification-freecodecamp/',
   root,
   build: {
     outDir: '../dist',

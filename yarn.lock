@@ -847,9 +847,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"data-visualization-certification@workspace:.":
+"data-visualization-certification-freecodecamp@workspace:.":
   version: 0.0.0-use.local
-  resolution: "data-visualization-certification@workspace:."
+  resolution: "data-visualization-certification-freecodecamp@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.2.0"
     autoprefixer: "npm:^10.4.19"
